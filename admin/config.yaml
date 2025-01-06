@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway # Use git-gateway to integrate with Netlify Identity
+  branch: main # Replace with your GitHub branch name, if different
+
+media_folder: "uploads" # Where uploaded media files are stored (relative to the root)
+public_folder: "/uploads" # Public URL for uploaded media files
+
+collections:
+  - name: "poetry" # Identifier for the collection
+    label: "Poetry" # Display name in the CMS
+    folder: "content/poetry" # Folder where poetry Markdown files are stored
+    create: true # Allow creating new files
+    slug: "{{slug}}" # File name format
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "prose" # Identifier for prose
+    label: "Prose" # Display name in the CMS
+    folder: "content/prose" # Folder where prose Markdown files are stored
+    create: true # Allow creating new files
+    slug: "{{slug}}" # File name format
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
