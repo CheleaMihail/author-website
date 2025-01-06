@@ -1,25 +1,26 @@
 backend:
-  name: git-gateway # Use git-gateway to integrate with Netlify Identity
-  branch: main # Replace with your GitHub branch name, if different
+  name: git-gateway
+  branch: main # Replace with your branch name if different
 
-media_folder: "uploads" # Where uploaded media files are stored (relative to the root)
-public_folder: "/uploads" # Public URL for uploaded media files
+media_folder: "static/uploads" # Folder where media files are stored (relative to the root)
+public_folder: "/uploads" # Public URL for the media files
 
 collections:
-  - name: "poetry" # Identifier for the collection
-    label: "Poetry" # Display name in the CMS
-    folder: "content/poetry" # Folder where poetry Markdown files are stored
-    create: true # Allow creating new files
-    slug: "{{slug}}" # File name format
+  - name: "poetry" # Unique identifier for the poetry collection
+    label: "Poetry" # Visible name in the CMS
+    folder: "content/poetry" # Folder for storing poetry Markdown files
+    create: true # Allow admins to create new entries
+    slug: "{{slug}}" # Format for file names
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "prose" # Identifier for prose
-    label: "Prose" # Display name in the CMS
-    folder: "content/prose" # Folder where prose Markdown files are stored
-    create: true # Allow creating new files
-    slug: "{{slug}}" # File name format
+
+  - name: "prose" # Unique identifier for the prose collection
+    label: "Prose" # Visible name in the CMS
+    folder: "content/prose" # Folder for storing prose Markdown files
+    create: true # Allow admins to create new entries
+    slug: "{{slug}}" # Format for file names
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
