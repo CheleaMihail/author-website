@@ -10,30 +10,6 @@
     <!-- Include the script that builds the page and powers Decap CMS -->
     <button id="login-button">Login</button>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        // Așteaptă să fie încărcat scriptul Netlify Identity Widget
-        window.netlifyIdentity = window.netlifyIdentity || { init: function() {} };
-      
-        // Initializează widgetul Netlify Identity
-        netlifyIdentity.init();
-      
-        // Deschide dialogul de logare atunci când se apasă butonul de login
-        document.getElementById('login-button').addEventListener('click', function() {
-          netlifyIdentity.open();
-        });
-      
-        // Verifică dacă utilizatorul este autentificat și afișează informațiile
-        netlifyIdentity.on('login', user => {
-          console.log('User logged in:', user);
-          // Poți aici să redirecționezi utilizatorul către panoul de administrare
-          window.location.href = '/admin'; // Dacă ești deja autentificat, poți redirecționa către admin
-        });
-      
-        // Poți adăuga și un handler pentru logout
-        netlifyIdentity.on('logout', () => {
-          console.log('User logged out');
-        });
-      </script>      
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  
   </body>
 </html>
